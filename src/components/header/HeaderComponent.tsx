@@ -11,7 +11,7 @@ export default function HeaderComponent() {
 
   return (
     <header>
-      <nav className={styles.nav}>
+      <nav>
         <img className={styles.logo} src={Logo} alt="Logotipo da 1001 encartelados" />
         <ul>
           <li>
