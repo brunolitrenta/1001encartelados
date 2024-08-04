@@ -1,0 +1,61 @@
+section {
+    height: 100%;
+    width: 85%;
+    
+    .title {
+        font-family: 'Lalezar', 'Courier New', Courier, monospace;
+        font-size: 1.5rem;
+        color: #9D1C00;
+
+        margin: 12.5px 0;
+    }
+
+    .productsArea {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 120px);
+        justify-content: space-between;
+
+        column-gap: 1rem;
+        row-gap: 1.25rem;
+        
+        button {
+            width: 120px;
+            height: 40px;
+
+            border-radius: 20px;
+            background-color: #ffffff;
+            border: none;
+
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+            box-shadow: 2px 2px 6px rgb(150, 150, 150);
+
+            cursor: pointer;
+
+            label {
+                font-family: 'Markazi Text', serif;
+                font-weight: 500;
+                font-size: 1.5rem;
+            }
+
+            input {
+                cursor: pointer;
+                height: 1.35rem;
+                width: 1.35rem;
+
+                appearance: none;
+            
+                background-color: #ffffff;
+
+                border: 2px rgb(0, 0, 0) solid;
+                border-radius: 5px;
+            }
+        }
+
+        .productSelected {
+            border: #9D1C00 solid 1.5px;
+        }
+    }
+}

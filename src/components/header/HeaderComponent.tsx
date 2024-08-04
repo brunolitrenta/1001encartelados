@@ -28,10 +28,12 @@ export default function HeaderComponent() {
           <button>
             <img src={cartIcon} alt="" />
           </button>
-          <button>
-            <img src={userIcon} alt="" />
-          </button>
-          <p>Faça login ou registre-se já!</p>
+          <div className={styles.loginArea}>
+            <button>
+              <img src={userIcon} alt="" />
+            </button>
+            <p>Faça login ou registre-se já!</p>
+          </div>
         </div>
       </nav>
     </header>
