@@ -1,13 +1,15 @@
 section {
     height: 100%;
     width: 85%;
-    
+
+    margin-bottom: 20px;
+
     .title {
         font-family: 'Lalezar', 'Courier New', Courier, monospace;
         font-size: 1.5rem;
         color: #9D1C00;
 
-        margin: 12.5px 0;
+        margin: 10px 0;
     }
 
     .productsArea {
@@ -17,7 +19,7 @@ section {
 
         column-gap: 1rem;
         row-gap: 1.25rem;
-        
+
         button {
             width: 120px;
             height: 40px;
@@ -34,10 +36,16 @@ section {
 
             cursor: pointer;
 
+            &:hover {
+                transition: all 0.1s;
+                filter: brightness(96%);
+            }
+
             label {
                 font-family: 'Markazi Text', serif;
                 font-weight: 500;
                 font-size: 1.5rem;
+                cursor: pointer;
             }
 
             input {
@@ -46,11 +54,21 @@ section {
                 width: 1.35rem;
 
                 appearance: none;
-            
+
                 background-color: #ffffff;
 
                 border: 2px rgb(0, 0, 0) solid;
                 border-radius: 5px;
+
+                &:checked {
+                    transition: all 0.1s;
+                    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='16' width='14' viewBox='0 0 448 512'%3E%3C!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--%3E%3Cpath fill='%23ffffff' d='M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z'/%3E%3C/svg%3E");                    
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    border-color: #721400;
+                    background-color: #9D1C00;
+                    color: white;
+                }
             }
         }
 

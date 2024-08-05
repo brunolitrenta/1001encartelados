@@ -65,7 +65,8 @@ header {
                     background-color: transparent;
 
                     &:hover {
-                        color: #E70400;
+                        transition: all 0.1s;
+                        filter: brightness(135%);
                         cursor: pointer;
                     }
                 }
@@ -104,9 +105,40 @@ header {
                 &:hover {
                     cursor: pointer;
 
+                    span {
+                        transform: scale(1.05);
+                    }
+                    
                     img {
                         animation: text-pop-up-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
                     }
+                }
+            }
+            
+            .cartIcon {
+                position: relative;
+                
+                span {
+                    transition: 0.3s;
+
+                    width: 1.45rem;
+                    height: 1.45rem;
+                    background-color: #FCB400;
+
+                    font-family: 'Arial';
+                    font-size: 0.75rem;
+                    font-weight: 800;
+                    color: white;
+
+                    border-radius: 100%;
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    position: absolute;
+                    bottom: 35px;
+                    left: 40px;
                 }
             }
 

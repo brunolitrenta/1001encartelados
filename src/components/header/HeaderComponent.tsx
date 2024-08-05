@@ -4,9 +4,11 @@ import Logo from '../../assets/images/logo1001.png'
 import userIcon from '../../assets/images/user-solid.svg'
 import cartIcon from '../../assets/images/cart-shopping-solid.svg'
 import { useState } from 'react'
+import { useProductsOnCart } from '../../hooks/useProductsOnCart.ts'
 
 export default function HeaderComponent() {
 
+  const { productsOnCart } = useProductsOnCart()
   const [selectedButton, setSelectedButton] = useState<string>("products")
 
   return (
@@ -25,8 +27,11 @@ export default function HeaderComponent() {
           </li>
         </ul>
         <div className={styles.userArea}>
-          <button>
+          <button className={styles.cartIcon}>
             <img src={cartIcon} alt="" />
+            {
+              productsOnCart.length > 0 ? <span>{productsOnCart.length}</span> : null
+            }
           </button>
           <div className={styles.loginArea}>
             <button>
