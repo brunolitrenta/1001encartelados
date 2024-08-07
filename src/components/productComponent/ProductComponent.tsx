@@ -1,20 +1,20 @@
 import styles from './ProductComponent.module.scss'
 import { products } from '../../products'
 import { useProductsOnCart } from '../../hooks/useProductsOnCart.ts'
-//import checkSquareIcon from '../../assets/images/square-regular.svg'
+import { IProductsOnCart } from '../../interfaces/IProductsOnCart.ts'
 
 export function ProductComponent() {
     const { productsOnCart, setProductsOnCart } = useProductsOnCart()
 
-    function addProductsOnCart(cod: number) {
-        if (productsOnCart.includes(cod)) {
-            const filteredProducts = productsOnCart.filter((_cod) => _cod !== cod)
+    function addProductsOnCart(product: IProductsOnCart) {
+        if (productsOnCart.includes(product)) {
+            const filteredProducts = productsOnCart.filter((_product) => _product.cod !== product.cod)
 
             setProductsOnCart(filteredProducts)
             return
         }
 
-        setProductsOnCart((sp) => [...sp, cod])
+        setProductsOnCart((p) => [...p, product])
     }
 
     return (
@@ -25,9 +25,9 @@ export function ProductComponent() {
                 {
                     products.map(product => {
                         return (
-                            <button className={productsOnCart.includes(product.cod) ? styles.productSelected : ''} onClick={() => addProductsOnCart(product.cod)}>
+                            <button className={productsOnCart.includes(product) ? styles.productSelected : ''} onClick={() => addProductsOnCart(product)}>
                                 <label>{product.cod}</label>
-                                <input checked={productsOnCart.includes(product.cod)} type="checkbox" name="checkbox" id={styles.checkbox} />
+                                <input checked={productsOnCart.includes(product)} type="checkbox" name="checkbox" id={styles.checkbox} />
                             </button>
                         )
                     })

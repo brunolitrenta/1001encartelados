@@ -1,9 +1,13 @@
+@import "src/common/_variables.scss";
+
 .mainContent {
     min-height: 90vh;
     height: 100%;
     width: 100%;
-    background-color: #F5F5F5;
+    background-color: $background-color;
 
     display: flex;
     justify-content: center;
+
+    padding: 12.5px 0 20px 0;
 }

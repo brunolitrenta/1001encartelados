@@ -1,15 +1,16 @@
+@import "src/common/_variables.scss";
+
 section {
     height: 100%;
     width: 85%;
 
-    margin-bottom: 20px;
-
     .title {
-        font-family: 'Lalezar', 'Courier New', Courier, monospace;
+        font-family: $primary-font;
         font-size: 1.5rem;
-        color: #9D1C00;
+        letter-spacing: 0.5px;
+        color: $primary-color;
 
-        margin: 10px 0;
+        margin-bottom: 10px;
     }
 
     .productsArea {
@@ -42,7 +43,7 @@ section {
             }
 
             label {
-                font-family: 'Markazi Text', serif;
+                font-family: $secondary-font, serif;
                 font-weight: 500;
                 font-size: 1.5rem;
                 cursor: pointer;
@@ -66,14 +67,14 @@ section {
                     background-repeat: no-repeat;
                     background-position: center;
                     border-color: #721400;
-                    background-color: #9D1C00;
+                    background-color: $primary-color;
                     color: white;
                 }
             }
         }
 
         .productSelected {
-            border: #9D1C00 solid 1.5px;
+            border: $primary-color solid 1.5px;
         }
     }
 }

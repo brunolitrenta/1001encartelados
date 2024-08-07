@@ -1,3 +1,5 @@
+@import "src/common/_variables.scss";
+
 @keyframes scale-in-hor-center {
     0% {
         transform: scaleX(0);
@@ -25,7 +27,7 @@
 header {
     width: 100%;
 
-    margin: 20px 0;
+    padding: 20px 0;
 
     display: flex;
     align-items: center;
@@ -57,10 +59,10 @@ header {
 
                 button {
                     position: relative;
-                    font-family: 'Lalezar', 'Courier New', Courier, monospace;
+                    font-family: $primary-font;
 
                     font-size: 1.75rem;
-                    color: #9D1C00;
+                    color: $primary-color;
                     border: none;
                     background-color: transparent;
 
@@ -77,7 +79,7 @@ header {
                         content: " ";
                         width: 80%;
                         height: 7px;
-                        background-color: #9D1C00;
+                        background-color: $primary-color;
                         position: absolute;
                         bottom: 0;
                         left: 10%;
@@ -123,7 +125,7 @@ header {
 
                     width: 1.45rem;
                     height: 1.45rem;
-                    background-color: #FCB400;
+                    background-color: $secondary-color;
 
                     font-family: 'Arial';
                     font-size: 0.75rem;
@@ -150,8 +152,8 @@ header {
                 width: 60%;
 
                 p {
-                    font-family: 'Lalezar', 'Courier New', Courier, monospace;
-                    color: #9D1C00;
+                    font-family: $primary-font;
+                    color: $primary-color;
                     text-align: center;
 
                     width: 70%;
