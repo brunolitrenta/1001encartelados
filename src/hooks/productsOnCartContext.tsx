@@ -7,7 +7,7 @@ interface productsOnCartProps {
 
 export interface IProductsOnCartContextDataProps {
     setProductsOnCart: Dispatch<SetStateAction<Array<IProductsOnCart>>>,
-    productsOnCart: Array<IProductsOnCart>
+    productsOnCart: Array<IProductsOnCart>,
 }
 
 const ProductsOnCartContextData = createContext<IProductsOnCartContextDataProps>({} as IProductsOnCartContextDataProps)

@@ -1,4 +1,5 @@
 export interface IProductsOnCart {
     cod: number,
-    name: string
+    name: string,
+    quantity: number
 }

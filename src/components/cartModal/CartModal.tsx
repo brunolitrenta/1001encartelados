@@ -1,8 +1,9 @@
 import styles from './CartModal.module.scss';
-import { faXmark } from '@fortawesome/free-solid-svg-icons';
+import { faMinus, faPlus, faTrash, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useProductsOnCart } from '../../hooks/useProductsOnCart';
 import { useEffect } from 'react';
+import { IProductsOnCart } from '../../interfaces/IProductsOnCart';
 
 interface ModalProps {
     overlayCloseModal?: boolean;
@@ -23,6 +24,25 @@ export default function Modal({
             document.body.classList.remove(styles.modalOpen);
         };
     }, []);
+
+    function modifyQuantity(product: IProductsOnCart, type: string) {
+        const filteredProducts = productsOnCart.filter(_product => _product !== product)
+
+        if (type == 'minus' && product.quantity > 0) {
+            product.quantity -= 10
+        }
+        else if (type == 'plus') {
+            product.quantity += 10
+        }
+
+        setProductsOnCart([...filteredProducts, product])
+    }
+
+    function removeProduct(product: IProductsOnCart) {
+        const filteredProducts = productsOnCart.filter(_product => _product !== product)
+
+        setProductsOnCart(filteredProducts)
+    }
 
 
     return (
@@ -50,8 +70,31 @@ export default function Modal({
                             : <>
                                 {sortedProductsOnCart.map(product => {
                                     return (
-                                        <div className={styles.productCard}>
-                                            <p>{product.cod} - {product.name}</p>
+                                        <div className={styles.productCard} key={product.cod}>
+                                            <p className={styles.productInfo}>{product.cod} - {product.name}</p>
+
+                                            <div className={styles.quantitySelector}>
+                                                <div className={styles.quantityDiv}>
+                                                    <p>Selecione a quantidade:</p>
+
+                                                    <div>
+                                                        <button onClick={() => modifyQuantity(product, 'minus')} disabled={product.quantity == 10}>
+                                                            <FontAwesomeIcon icon={faMinus} color={product.quantity == 10 ? 'grey' : 'black'} />
+                                                        </button>
+
+                                                        <p>{product.quantity}</p>
+
+                                                        <button onClick={() => modifyQuantity(product, 'plus')}>
+                                                            <FontAwesomeIcon icon={faPlus} color='black' />
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <button className={styles.removeProductBtn} onClick={() => removeProduct(product)}>
+                                                <FontAwesomeIcon icon={faTrash} color='#9D1C00' />
+                                                <p>Remover</p>
+                                            </button>
                                         </div>
                                     )
                                 })}
@@ -67,8 +110,8 @@ export default function Modal({
                 </div>
 
                 <div className={styles.bottomOfCart}>
-                    <button>Fechar pedido</button>
-                    <button>Continuar comprando</button>
+                    <button onClick={() => console.log(productsOnCart)} className={styles.finalizeOrder}>Fechar pedido</button>
+                    <button onClick={() => onClose()}>Continuar comprando</button>
                 </div>
             </section>
         </section>
