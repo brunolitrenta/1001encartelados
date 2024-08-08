@@ -13,7 +13,6 @@ export function ProductComponent() {
             setProductsOnCart(filteredProducts)
             return
         }
-
         setProductsOnCart((p) => [...p, product])
     }
 

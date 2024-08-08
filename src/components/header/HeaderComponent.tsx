@@ -40,7 +40,7 @@ export default function HeaderComponent() {
               <button>
                 <img src={userIcon} alt="" />
               </button>
-              <p>Faça login ou registre-se já!</p>
+              <p>Faça login ou registre-se</p>
             </div>
           </div>
         </nav>

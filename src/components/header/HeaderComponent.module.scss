@@ -60,7 +60,7 @@ header {
                 button {
                     position: relative;
                     font-family: $primary-font;
-
+                    font-weight: bold;
                     font-size: 1.75rem;
                     color: $primary-color;
                     border: none;
@@ -81,7 +81,7 @@ header {
                         height: 7px;
                         background-color: $primary-color;
                         position: absolute;
-                        bottom: 0;
+                        top: 35px;
                         left: 10%;
                         border-radius: 22px;
                     }
@@ -127,7 +127,7 @@ header {
                     height: 1.45rem;
                     background-color: $secondary-color;
 
-                    font-family: 'Arial';
+                    font-family: $primary-font;
                     font-size: 0.75rem;
                     font-weight: 800;
                     color: white;
@@ -155,8 +155,8 @@ header {
                     font-family: $primary-font;
                     color: $primary-color;
                     text-align: center;
-
-                    width: 70%;
+                    font-weight: bold;
+                    min-width: 80%;
                 }
             }
 
