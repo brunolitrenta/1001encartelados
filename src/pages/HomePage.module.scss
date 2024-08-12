@@ -1,10 +1,10 @@
 @import "src/common/_variables.scss";
 
 .mainContent {
-    min-height: 90vh;
+    min-height: 100vh;
     height: 100%;
     width: 100%;
-    background-color: $background-color;
+
 
     display: flex;
     justify-content: center;

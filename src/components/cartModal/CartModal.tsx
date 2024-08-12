@@ -1,5 +1,5 @@
 import styles from './CartModal.module.scss';
-import { faMinus, faPlus, faTrash, faXmark } from '@fortawesome/free-solid-svg-icons';
+import {faCircleMinus, faCirclePlus, faTrash, faXmark} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useProductsOnCart } from '../../hooks/useProductsOnCart';
 import { useEffect } from 'react';
@@ -79,13 +79,13 @@ export default function Modal({
 
                                                     <div>
                                                         <button onClick={() => modifyQuantity(product, 'minus')} disabled={product.quantity == 10}>
-                                                            <FontAwesomeIcon icon={faMinus} color={product.quantity == 10 ? 'grey' : 'black'} />
+                                                            <FontAwesomeIcon icon={faCircleMinus} size={"lg"} color={product.quantity == 10 ? 'grey' : '#9d1c00'} />
                                                         </button>
 
                                                         <p>{product.quantity}</p>
 
                                                         <button onClick={() => modifyQuantity(product, 'plus')}>
-                                                            <FontAwesomeIcon icon={faPlus} color='black' />
+                                                            <FontAwesomeIcon icon={faCirclePlus} size={"lg"} color='#9d1c00' />
                                                         </button>
                                                     </div>
                                                 </div>
