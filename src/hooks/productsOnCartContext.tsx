@@ -12,7 +12,7 @@ export interface IProductsOnCartContextDataProps {
 
 const ProductsOnCartContextData = createContext<IProductsOnCartContextDataProps>({} as IProductsOnCartContextDataProps)
 
-export function ProductsOnCartProvider({ children }:  productsOnCartProps) {
+export function ProductsOnCartProvider({ children }: productsOnCartProps) {
     const [productsOnCart, setProductsOnCart] = useState<Array<IProductsOnCart>>([])
 
     return (

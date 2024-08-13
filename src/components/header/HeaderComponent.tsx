@@ -18,6 +18,7 @@ export default function HeaderComponent() {
       <header>
         <nav>
           <img className={styles.logo} src={Logo} alt="Logotipo da 1001 encartelados" />
+
           <ul>
             <li>
               <button onClick={() => setSelectedButton('products')} className={selectedButton == "products" ? styles.selectedButton : undefined}>Produtos</button>
@@ -29,6 +30,7 @@ export default function HeaderComponent() {
               <button onClick={() => setSelectedButton('about')} className={selectedButton == "about" ? styles.selectedButton : undefined}>Sobre</button>
             </li>
           </ul>
+
           <div className={styles.userArea}>
             <button className={styles.cartIcon} onClick={() => setOpenModal(!openModal)}>
               <img src={cartIcon} alt="" />
@@ -36,6 +38,7 @@ export default function HeaderComponent() {
                 productsOnCart.length > 0 ? <span>{productsOnCart.length}</span> : null
               }
             </button>
+
             <div className={styles.loginArea}>
               <button>
                 <img src={userIcon} alt="" />
@@ -47,7 +50,7 @@ export default function HeaderComponent() {
       </header>
       {
         openModal
-          ? <Modal onClose={() => setOpenModal(false)}/>
+          ? <Modal onClose={() => setOpenModal(false)} />
           : ''
       }
     </>

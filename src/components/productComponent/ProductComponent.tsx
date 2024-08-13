@@ -6,7 +6,7 @@ import { IProductsOnCart } from '../../interfaces/IProductsOnCart.ts'
 export function ProductComponent() {
     const { productsOnCart, setProductsOnCart } = useProductsOnCart()
 
-    function addProductsOnCart(product : IProductsOnCart) {
+    function addProductsOnCart(product: IProductsOnCart) {
         if (productsOnCart.includes(product)) {
             const filteredProducts = productsOnCart.filter((_product) => _product.cod !== product.cod)
 

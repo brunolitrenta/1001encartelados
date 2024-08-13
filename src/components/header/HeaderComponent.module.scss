@@ -26,32 +26,41 @@
 
 @keyframes slide-in-top {
     0% {
-        transform:translateY(-1000px);opacity:0
+        transform: translateY(-1000px);
+        opacity: 0
     }
+
     100% {
-        transform:translateY(0);opacity:1
+        transform: translateY(0);
+        opacity: 1
     }
 }
 
 header {
-    animation:slide-in-top 0.3s cubic-bezier(.25,.46,.45,.94) both;
-    z-index: 1;
-    width: 100%;
+    animation: slide-in-top 0.3s cubic-bezier(.25, .46, .45, .94) both;
+
     position: sticky;
     top: 0;
+    z-index: 1;
+
+    width: 100%;
+
     padding: 20px 0;
+
     background-color: white;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     box-shadow: 0 3px 15px rgba(0, 0, 0, 0.03);
 
     nav {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
 
-        width: 85%;
+        width: 100%;
 
         .logo {
             width: 7%;
@@ -104,9 +113,8 @@ header {
 
         .userArea {
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            width: 15%;
+            gap: 30px;
 
             button {
                 border: none;
@@ -123,16 +131,16 @@ header {
                     span {
                         transform: scale(1.05);
                     }
-                    
+
                     img {
                         animation: text-pop-up-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
                     }
                 }
             }
-            
+
             .cartIcon {
                 position: relative;
-                
+
                 span {
                     transition: 0.3s;
 
@@ -160,19 +168,27 @@ header {
             .loginArea {
                 display: flex;
                 align-items: center;
-                justify-content: space-between;
-
-                width: 60%;
+                gap: 2.5px;
 
                 p {
                     font-family: $primary-font;
                     color: $primary-color;
                     text-align: center;
                     font-weight: bold;
-                    min-width: 80%;
+                    width: 100px;
                 }
             }
 
+        }
+    }
+}
+
+@media(max-width: 1024px) {
+    header {
+        nav {
+            ul {
+                width: 42.5%;
+            }
         }
     }
 }

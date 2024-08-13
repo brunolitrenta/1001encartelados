@@ -1,5 +1,5 @@
 import styles from './CartModal.module.scss';
-import {faCircleMinus, faCirclePlus, faTrash, faXmark} from '@fortawesome/free-solid-svg-icons';
+import { faCircleMinus, faCirclePlus, faTrash, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useProductsOnCart } from '../../hooks/useProductsOnCart';
 import { useEffect } from 'react';
