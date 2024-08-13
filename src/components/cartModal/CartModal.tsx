@@ -82,7 +82,7 @@ export default function Modal({
                                                             <FontAwesomeIcon icon={faCircleMinus} size={"lg"} color={product.quantity == 10 ? 'grey' : '#9d1c00'} />
                                                         </button>
 
-                                                        <p>{product.quantity}</p>
+                                                        <p className={styles.quantityParagraph}>{product.quantity}</p>
 
                                                         <button onClick={() => modifyQuantity(product, 'plus')}>
                                                             <FontAwesomeIcon icon={faCirclePlus} size={"lg"} color='#9d1c00' />

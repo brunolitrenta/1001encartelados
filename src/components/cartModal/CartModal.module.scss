@@ -125,9 +125,7 @@
 
                     .quantityDiv {
                         height: 100%;
-
                         padding-left: 1rem;
-
                         display: flex;
                         justify-content: flex-start;
                         gap: 30px;
@@ -141,6 +139,12 @@
                         display: flex;
                         justify-content: center;
                         gap: 5px;
+
+                        .quantityParagraph {
+                            font-size: 1.25rem;
+                            width: 30px;
+                            text-align: center;
+                        }
 
                         button {
                             cursor: pointer;
