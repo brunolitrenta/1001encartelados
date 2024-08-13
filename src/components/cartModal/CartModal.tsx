@@ -75,7 +75,7 @@ export default function Modal({
 
                                             <div className={styles.quantitySelector}>
                                                 <div className={styles.quantityDiv}>
-                                                    <p>Selecione a quantidade:</p>
+                                                    <p>Quantidade:</p>
 
                                                     <div>
                                                         <button onClick={() => modifyQuantity(product, 'minus')} disabled={product.quantity == 10}>
