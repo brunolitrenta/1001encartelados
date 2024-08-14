@@ -1,5 +1,29 @@
 @import "src/common/_variables.scss";
 
+@keyframes slide-in-right {
+    0% {
+        -webkit-transform: translateX(1000px);
+        transform: translateX(1000px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes shrink {
+    from {
+        width: 100%;
+    }
+
+    to {
+        width: 0;
+    }
+}
+
 section {
     height: 100%;
     width: 85%;
@@ -75,6 +99,41 @@ section {
 
         .productSelected {
             border: $primary-color solid 1.5px;
+        }
+    }
+
+    .cartNotification {
+        animation: slide-in-right 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+
+        width: 300px;
+        height: 75px;
+
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background-color: white;
+
+        position: fixed;
+        bottom: 40px;
+        right: 40px;
+
+        p {
+            font-family: $primary-font;
+            font-weight: 400;
+        }
+
+        .progressBar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: $primary-color;
+            animation: shrink 1.5s linear forwards;
         }
     }
 }
